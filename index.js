@@ -12,5 +12,5 @@ inputBTN.addEventListener("click", function() {         // react to an event exe
 })        
 
 for (let i = 0; i < myLeads.length; i++) {
-    ulEL.textContent += myLeads[i] + " "
+    ulEL.innerHTML += "<li>" + myLeads[i] + "</li>"     //will convert here the concatenation into html
 }
