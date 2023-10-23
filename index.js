@@ -18,7 +18,7 @@ let  listItems = ""
 
 for (let i = 0; i < myLeads.length; i++) {
 
-    listItems += "<li><a href=' " + myLeads[i] + " '>" + myLeads[i] + "</a></li>"     //never forget href=""!!! and when in strings use : ' '
+    listItems += "<li><a target='_blank' href=' " + myLeads[i] + " '>" + myLeads[i] + "</a></li>"     //never forget href=""!!! and when in strings use : ' '      target='_blank' for new tabs
 }
    ulEL.innerHTML = listItems               //will convert here the concatenation into html
 }   
