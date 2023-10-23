@@ -1,4 +1,4 @@
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myLeads = []
 
 const inputEL = document.getElementById("input-el")     //const can't be reassigned. If possible, use const. If not, use let.
 const inputBTN = document.getElementById("input-btn")
@@ -8,9 +8,16 @@ const ulEL = document.getElementById("ul-el")
 
 inputBTN.addEventListener("click", function() {         // react to an event exemple : click on button 
     myLeads.push(inputEL.value)                 //add in an array. adding value will here, copy the text in the input
-    console.log(myLeads)
+    renderLeads()
+    inputEL.value =""           //change value
 })        
 
+function renderLeads() {
+
+let  listItems = ""
+
 for (let i = 0; i < myLeads.length; i++) {
-    ulEL.innerHTML += "<li>" + myLeads[i] + "</li>"     //will convert here the concatenation into html
+    listItems += "<li>" + myLeads[i] + "</li>"     
 }
+   ulEL.innerHTML = listItems               //will convert here the concatenation into html
+}   
