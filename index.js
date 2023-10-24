@@ -17,8 +17,13 @@ function renderLeads() {
 let  listItems = ""
 
 for (let i = 0; i < myLeads.length; i++) {
-
-    listItems += "<li><a target='_blank' href=' " + myLeads[i] + " '>" + myLeads[i] + "</a></li>"     //never forget href=""!!! and when in strings use : ' '      target='_blank' for new tabs
+     // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>" <== before
+     listItems += `
+            <li>                                                                         
+                <a target='_blank' href='${myLeads[i]}'> 
+                ${myLeads[i]}</a>
+            </li>
+    `                                                   //never forget href=""!!! and when in strings use : ' '      target='_blank' for new tabs   ${myLeads[i]} template strings/literals
 }
    ulEL.innerHTML = listItems               //will convert here the concatenation into html
 }   
