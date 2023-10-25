@@ -3,8 +3,9 @@ let myLeads = []
 const inputEL = document.getElementById("input-el")     //const can't be reassigned. If possible, use const. If not, use let.
 const inputBTN = document.getElementById("input-btn")
 const ulEL = document.getElementById("ul-el")
+const deleteBTN = document.getElementById("delete-btn")
 
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )   //get myLeads from localStorage it's a truthy or falsy value (which different from boolean)
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )   //get myLeads from localStorage it's a truthy or falsy value (which different from boolean)
 
 
 if (leadsFromLocalStorage) {
@@ -20,6 +21,12 @@ inputBTN.addEventListener("click", function() {         // react to an event exe
 
     renderLeads()
 })  
+
+deleteBTN.addEventListener("dblclick", function() {
+    myLeads = []
+    localStorage.clear()
+    renderLeads()
+})
 
 
 function renderLeads() {
