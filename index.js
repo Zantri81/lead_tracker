@@ -5,7 +5,6 @@ const inputBTN = document.getElementById("input-btn")
 const ulEL = document.getElementById("ul-el")
 
 let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )   //get myLeads from localStorage it's a truthy or falsy value (which different from boolean)
-console.log(leadsFromLocalStorage)
 
 
 if (leadsFromLocalStorage) {
