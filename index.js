@@ -4,13 +4,24 @@ const inputEL = document.getElementById("input-el")     //const can't be reassig
 const inputBTN = document.getElementById("input-btn")
 const ulEL = document.getElementById("ul-el")
 
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )   //get myLeads from localStorage it's a truthy or falsy value (which different from boolean)
+console.log(leadsFromLocalStorage)
+
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 
 inputBTN.addEventListener("click", function() {         // react to an event exemple : click on button 
     myLeads.push(inputEL.value)                 //add in an array. adding value will here, copy the text in the input
+    inputEL.value =""           //change value    
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )       //save array into localStorage. must be transform into a string
+
     renderLeads()
-    inputEL.value =""           //change value
-})        
+})  
+
 
 function renderLeads() {
 
