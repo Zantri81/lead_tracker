@@ -19,26 +19,26 @@ inputBTN.addEventListener("click", function() {         // react to an event exe
     inputEL.value =""           //change value    
     localStorage.setItem("myLeads", JSON.stringify(myLeads) )       //save array into localStorage. must be transform into a string
 
-    renderLeads()
+    render(myLeads)
 })  
 
 deleteBTN.addEventListener("dblclick", function() {
     myLeads = []
     localStorage.clear()
-    renderLeads()
+    render(myLeads)
 })
 
 
-function renderLeads() {
+function render(leads) {
 
 let  listItems = ""
 
-for (let i = 0; i < myLeads.length; i++) {
+for (let i = 0; i < leads.length; i++) {
      // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>" <== before
      listItems += `
             <li>                                                                         
-                <a target='_blank' href='${myLeads[i]}'> 
-                ${myLeads[i]}</a>
+                <a target='_blank' href='${leads[i]}'> 
+                ${leads[i]}</a>
             </li>
     `                                                   //never forget href=""!!! and when in strings use : ' '      target='_blank' for new tabs   ${myLeads[i]} template strings/literals
 }
