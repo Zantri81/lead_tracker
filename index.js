@@ -4,6 +4,7 @@ const inputEL = document.getElementById("input-el")     //const can't be reassig
 const inputBTN = document.getElementById("input-btn")
 const ulEL = document.getElementById("ul-el")
 const deleteBTN = document.getElementById("delete-btn")
+const tabBTN = document.getElementById("tab-btn")
 
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )   //get myLeads from localStorage it's a truthy or falsy value (which different from boolean)
 
@@ -22,6 +23,15 @@ inputBTN.addEventListener("click", function() {         // react to an event exe
     render(myLeads)
 })  
 
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
+
+
+tabBTN.addEventListener("click",function(){
+    console.log(tabs)
+})
+
 deleteBTN.addEventListener("dblclick", function() {
     myLeads = []
     localStorage.clear()
@@ -29,11 +39,11 @@ deleteBTN.addEventListener("dblclick", function() {
 })
 
 
-function render(leads) {
 
-let  listItems = ""
 
-for (let i = 0; i < leads.length; i++) {
+function render(leads) {            // a parameter is inside
+    let  listItems = ""
+    for (let i = 0; i < leads.length; i++) {
      // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>" <== before
      listItems += `
             <li>                                                                         
